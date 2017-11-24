@@ -11,6 +11,6 @@ using UnityEngine;
 public class BloodController : MonoBehaviour {
 
 	public void DestroyMe(){
-		Destroy (gameObject);
+		Destroy (this.gameObject, 0.3f);
 	}
 }

@@ -43,7 +43,14 @@ public class FishCollision : MonoBehaviour {
 		} else if (other.gameObject.tag.Equals ("enemy")) {
 			Debug.Log ("Collision enemy\n");
 
-			Instantiate (blood).GetComponent<Transform> ().position = other.gameObject.GetComponent<Transform> ().position;
+			var bloodObject = Instantiate (blood);
+
+			bloodObject.GetComponent<Transform> ().position = other.gameObject.GetComponent<Transform> ().position;
+
+			bloodObject.GetComponent<BloodController> ().DestroyMe ();
+
+			//audio souse for my enemy
+			other.gameObject.GetComponent<AudioSource> ().Play ();
 
 			//disappear enemy
 			other.gameObject.
