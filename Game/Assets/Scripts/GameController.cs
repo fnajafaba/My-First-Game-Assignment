@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour {
 	private int _score = 0;
 	private int _life = 3;
 
+	//getter and setter for score
 	public int Score{
 		get{ return _score; }
 		set{ 
@@ -39,6 +40,7 @@ public class GameController : MonoBehaviour {
 
 	}
 
+	//getter and setter for life
 	public int Life{
 		get{ return _life; }
 		set{ 
@@ -54,11 +56,13 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
+	//initializing for score and life
 	private void initialize(){
 
 		Player.Instance.Score = 0;
 		Player.Instance.Life = 3;
 
+		//set activity for lables in the begging of game
 		gameOverLabel.gameObject.SetActive (false);
 		highScoreLabel.gameObject.SetActive (false);
 		resetBtn.gameObject.SetActive (false);
@@ -67,6 +71,7 @@ public class GameController : MonoBehaviour {
 		scoreLabel.gameObject.SetActive (true);
 	}
 
+	//set activity for lables when game is over
 	public void gameOver(){
 		gameOverLabel.gameObject.SetActive (true);
 		highScoreLabel.gameObject.SetActive (true);
@@ -76,6 +81,7 @@ public class GameController : MonoBehaviour {
 
 		lifeLabel.gameObject.SetActive (false);
 		scoreLabel.gameObject.SetActive (false);
+
 		//set fish to not active in screen
 		fish.gameObject.SetActive (false);
 
@@ -92,6 +98,7 @@ public class GameController : MonoBehaviour {
 
 	}
 
+	//reset button click
 	public void ResetBtnClick(){
 
 		SceneManager.
@@ -100,6 +107,7 @@ public class GameController : MonoBehaviour {
 
 	}
 
+	//updating UI
 	public void updateUI(){
 
 		scoreLabel.text = "Score: " + Player.Instance.Score;

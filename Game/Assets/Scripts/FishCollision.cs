@@ -33,6 +33,8 @@ public class FishCollision : MonoBehaviour {
 
 		if (other.gameObject.tag.Equals ("jewelrybox")) {
 			Debug.Log ("Collision jewelrybox\n");
+
+			//if condition for playing bubble sound
 			if (_bubbleSound != null) {
 				_bubbleSound.Play ();
 			}
@@ -47,6 +49,7 @@ public class FishCollision : MonoBehaviour {
 
 			bloodObject.GetComponent<Transform> ().position = other.gameObject.GetComponent<Transform> ().position;
 
+			//destroy blood object
 			bloodObject.GetComponent<BloodController> ().DestroyMe ();
 
 			//audio souse for my enemy

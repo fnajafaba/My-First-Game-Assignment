@@ -29,6 +29,7 @@ void Start () {
 	Reset ();
 }
 
+	//use for reseting
 public void Reset(){
 
 	float xSpeed = Random.Range (minXSpeed, maxXSpeed);

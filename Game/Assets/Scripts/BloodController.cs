@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BloodController : MonoBehaviour {
-
+	//destroy the blood game object
 	public void DestroyMe(){
 		Destroy (this.gameObject, 0.3f);
 	}

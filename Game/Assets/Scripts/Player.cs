@@ -30,16 +30,20 @@ public class Player {
 	private int _score = 0;
 	private int _life = 3;
 
+	//getting and setting method for score
 	public int Score{
 		get{ return _score; }
 		set{ 
 			_score = value;
 			//scoreLabel.text = "Score: " + _score;
+
+			//updating UI
 			gCtrl.updateUI();
 		}
 
 	}
 
+	//getting and setting method for life
 	public int Life{
 		get{ return _life; }
 		set{ 
